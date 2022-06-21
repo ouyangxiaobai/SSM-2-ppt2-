@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YimiaochukuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.YimiaochukuEntity" id="yimiaochukuMap">
+        <result property="chukubianhao" column="chukubianhao"/>
+        <result property="yimiaobianhao" column="yimiaobianhao"/>
+        <result property="picihao" column="picihao"/>
+        <result property="yimiaomingcheng" column="yimiaomingcheng"/>
+        <result property="yimiaoshuxing" column="yimiaoshuxing"/>
+        <result property="yimiaoshuliang" column="yimiaoshuliang"/>
+        <result property="chukushijian" column="chukushijian"/>
+        <result property="caozuoren" column="caozuoren"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YimiaochukuVO" >
+		SELECT * FROM yimiaochuku  yimiaochuku         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YimiaochukuVO" >
+		SELECT  yimiaochuku.* FROM yimiaochuku  yimiaochuku
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YimiaochukuView" >
+
+		SELECT  yimiaochuku.* FROM yimiaochuku  yimiaochuku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YimiaochukuView" >
+		SELECT * FROM yimiaochuku  yimiaochuku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
